@@ -17,6 +17,9 @@
 		576E9C8B234EF0D800199B25 /* CoffeeShopItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576E9C8A234EF0D800199B25 /* CoffeeShopItemView.xib */; };
 		576E9C8D234EF29E00199B25 /* CoffeeShopItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576E9C8C234EF29E00199B25 /* CoffeeShopItemView.swift */; };
 		576E9C8F234EF35F00199B25 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576E9C8E234EF35F00199B25 /* Extensions.swift */; };
+		9BA0B7FD26D37046004937CF /* SNConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA0B7FC26D37046004937CF /* SNConstants.swift */; };
+		9BA0B80826D37251004937CF /* CoffeeShopItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BA0B80626D37251004937CF /* CoffeeShopItemCell.xib */; };
+		9BA0B80926D37251004937CF /* CoffeeShopItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA0B80726D37251004937CF /* CoffeeShopItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		576E9C8C234EF29E00199B25 /* CoffeeShopItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopItemView.swift; sourceTree = "<group>"; };
 		576E9C8E234EF35F00199B25 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		57DA91CB2354DB6C00A35DFA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9BA0B7FC26D37046004937CF /* SNConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNConstants.swift; sourceTree = "<group>"; };
+		9BA0B80626D37251004937CF /* CoffeeShopItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoffeeShopItemCell.xib; sourceTree = "<group>"; };
+		9BA0B80726D37251004937CF /* CoffeeShopItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeShopItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +94,6 @@
 			children = (
 				9BA0B7EB26D35E30004937CF /* CustomViews */,
 				9BA0B7EA26D35DD9004937CF /* Helpers */,
-				9BA0B7E926D35DD1004937CF /* ViewModels */,
 				9BA0B7E826D35DC9004937CF /* Resources */,
 				9BA0B7E726D35DC2004937CF /* Application */,
 				9BA0B7E626D35DBA004937CF /* ViewControllers */,
@@ -134,16 +139,10 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		9BA0B7E926D35DD1004937CF /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		9BA0B7EA26D35DD9004937CF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9BA0B7FC26D37046004937CF /* SNConstants.swift */,
 				576E9C8E234EF35F00199B25 /* Extensions.swift */,
 			);
 			path = Helpers;
@@ -152,6 +151,7 @@
 		9BA0B7EB26D35E30004937CF /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				9BA0B80526D37229004937CF /* CoffeeShopItemCell */,
 				9BA0B7EC26D35EA8004937CF /* CoffeeShopItemView */,
 			);
 			path = CustomViews;
@@ -164,6 +164,15 @@
 				576E9C8A234EF0D800199B25 /* CoffeeShopItemView.xib */,
 			);
 			path = CoffeeShopItemView;
+			sourceTree = "<group>";
+		};
+		9BA0B80526D37229004937CF /* CoffeeShopItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				9BA0B80726D37251004937CF /* CoffeeShopItemCell.swift */,
+				9BA0B80626D37251004937CF /* CoffeeShopItemCell.xib */,
+			);
+			path = CoffeeShopItemCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +260,7 @@
 				576E9C8B234EF0D800199B25 /* CoffeeShopItemView.xib in Resources */,
 				576E9C89234EC08400199B25 /* CoffeeShops.json in Resources */,
 				576E9C70234E7B9C00199B25 /* Assets.xcassets in Resources */,
+				9BA0B80826D37251004937CF /* CoffeeShopItemCell.xib in Resources */,
 				576E9C6E234E7B9900199B25 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,8 +279,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BA0B7FD26D37046004937CF /* SNConstants.swift in Sources */,
 				576E9C8F234EF35F00199B25 /* Extensions.swift in Sources */,
 				576E9C6B234E7B9900199B25 /* ViewController.swift in Sources */,
+				9BA0B80926D37251004937CF /* CoffeeShopItemCell.swift in Sources */,
 				576E9C69234E7B9900199B25 /* AppDelegate.swift in Sources */,
 				576E9C8D234EF29E00199B25 /* CoffeeShopItemView.swift in Sources */,
 			);

@@ -7,20 +7,15 @@
 
 import UIKit
 
-struct CoffeeShop {
+struct CoffeeShop: Decodable {
     let name: String
     let review: String
     let rating: Int
 }
 
-protocol CoffeeShopTapDelegate {
-    func didSelectItem(_ item: UIView?)
-}
-
 class ViewController: UIViewController {
-    var delegate: CoffeeShopTapDelegate!
     
-    @IBOutlet private weak var stackView: UIStackView!
+    @IBOutlet private weak var reviewsTableView: UITableView!
     
     private let reviews = [
         CoffeeShop(name:"Lofty", review: "Knowledgeable staff, stacked menu. Trust the Ethiopian in a pour over if you know your flavors. Will be back for the rest of this menu soon.", rating: 4),
@@ -32,33 +27,34 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        reviews.forEach { coffeeShop in
-            guard let containerView = CoffeeShopItemView.fromNib() as? CoffeeShopItemView else {
-                fatalError("Failed loading CoffeeShopItemView")
-            }
-            
-            containerView.nameLabel.text = coffeeShop.name
-            containerView.reviewLabel.text = coffeeShop.review
-            containerView.ratingLabel.text = "Rating: \(Int(coffeeShop.rating))"
-            stackView.addArrangedSubview(containerView)
-            containerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTap)))
-        }
-        
-        delegate = CoffeeShopDetailsHandler()
+        setUpTableView()
     }
     
-    @objc
-    func onTap(item: UIView) {
-        delegate.didSelectItem(nil)
+    private func setUpTableView() {
+        reviewsTableView.dataSource = self
+        reviewsTableView.delegate = self
+        reviewsTableView.separatorStyle = .none
+        reviewsTableView.registerCell(a: CoffeeShopItemCell.self)
+        reviewsTableView.rowHeight = UITableView.automaticDimension
+        reviewsTableView.estimatedRowHeight = 170
     }
 }
 
-class CoffeeShopDetailsHandler: CoffeeShopTapDelegate {
-    func didSelectItem(_ item: UIView?) {
-        let tapped = item as! CoffeeShopItemView
-        
-        // TODO: display the item's details
-        print("Item Tapped: \(tapped)")
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return reviews.count
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CoffeeShopItemCell.self), for: indexPath) as? CoffeeShopItemCell {
+            let review = reviews[indexPath.row]
+            cell.configure(coffeeShopReview: review)
+            return cell
+        }
+        return UITableViewCell()
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    
 }
