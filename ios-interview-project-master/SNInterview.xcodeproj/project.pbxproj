@@ -22,6 +22,7 @@
 		9BA0B80926D37251004937CF /* CoffeeShopItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA0B80726D37251004937CF /* CoffeeShopItemCell.swift */; };
 		9BA0B81226D3752D004937CF /* CoffeeShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA0B80F26D3752D004937CF /* CoffeeShopViewModel.swift */; };
 		9BA0B81326D3752D004937CF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA0B81126D3752D004937CF /* NetworkManager.swift */; };
+		9BA0B81726D37824004937CF /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA0B81626D37824004937CF /* PopUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		9BA0B80726D37251004937CF /* CoffeeShopItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeShopItemCell.swift; sourceTree = "<group>"; };
 		9BA0B80F26D3752D004937CF /* CoffeeShopViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeShopViewModel.swift; sourceTree = "<group>"; };
 		9BA0B81126D3752D004937CF /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9BA0B81626D37824004937CF /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		9BA0B7E626D35DBA004937CF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9BA0B81626D37824004937CF /* PopUpViewController.swift */,
 				576E9C6A234E7B9900199B25 /* ViewController.swift */,
 			);
 			path = ViewControllers;
@@ -308,6 +311,7 @@
 				9BA0B81326D3752D004937CF /* NetworkManager.swift in Sources */,
 				9BA0B80926D37251004937CF /* CoffeeShopItemCell.swift in Sources */,
 				576E9C69234E7B9900199B25 /* AppDelegate.swift in Sources */,
+				9BA0B81726D37824004937CF /* PopUpViewController.swift in Sources */,
 				576E9C8D234EF29E00199B25 /* CoffeeShopItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

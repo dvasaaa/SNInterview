@@ -70,5 +70,10 @@ extension ViewController: UITableViewDataSource {
 }
 
 extension ViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let review = coffeeShopViewModel.coffeeShopReviews?[indexPath.row] {
+            let popUpVC = PopUpViewController(review: review)
+            self.present(popUpVC, animated: false, completion: nil)
+        }
+    }
 }
