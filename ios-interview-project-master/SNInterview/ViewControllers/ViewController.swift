@@ -16,7 +16,9 @@ struct CoffeeShop: Decodable {
 class ViewController: UIViewController, LoadingView {
     
     @IBOutlet private weak var reviewsTableView: UITableView!
-    
+    /*
+     Used MVVM type of architecture (Model - View - ViewModel)
+     */
     var coffeeShopViewModel = CoffeeShopViewModel()
     
     override func viewDidLoad() {
@@ -37,6 +39,12 @@ class ViewController: UIViewController, LoadingView {
              */
             DispatchQueue.main.async {
                 self?.hideLoadingView()
+                if case .failure(_) = result {
+                    let alertVC = UIAlertController(title: SNConstants.Strings.errorTitle, message: SNConstants.Strings.errorMsg, preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: SNConstants.Strings.ok, style: .default, handler: nil)
+                    alertVC.addAction(okAction)
+                    self?.present(alertVC, animated: true, completion: nil)
+                }
                 self?.reviewsTableView.reloadData()
             }
         }
@@ -70,6 +78,9 @@ extension ViewController: UITableViewDataSource {
 }
 
 extension ViewController: UITableViewDelegate {
+    /*
+     On Selecting cell, a view is shown with review as a pop up.
+     */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let review = coffeeShopViewModel.coffeeShopReviews?[indexPath.row] {
             let popUpVC = PopUpViewController(review: review)
