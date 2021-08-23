@@ -24,3 +24,25 @@ extension UITableView {
         self.register(UINib(nibName: String(describing: a), bundle: bundle), forCellReuseIdentifier: String(describing: a))
     }
 }
+
+protocol LoadingView {
+    func showLoadingView()
+    func hideLoadingView()
+}
+
+extension LoadingView where Self: UIViewController {
+    func showLoadingView() {
+        let activityView = UIActivityIndicatorView(style: .gray)
+        activityView.center = view.center
+        activityView.startAnimating()
+        view.addSubview(activityView)
+        view.bringSubviewToFront(activityView)
+    }
+    
+    func hideLoadingView() {
+        if let activityView = view.subviews.compactMap({ $0 as? UIActivityIndicatorView }).first {
+            activityView.stopAnimating()
+            activityView.removeFromSuperview()
+        }
+    }
+}

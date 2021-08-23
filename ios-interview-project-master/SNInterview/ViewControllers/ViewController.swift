@@ -13,7 +13,7 @@ struct CoffeeShop: Decodable {
     let rating: Int
 }
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, LoadingView {
     
     @IBOutlet private weak var reviewsTableView: UITableView!
     
@@ -25,14 +25,26 @@ class ViewController: UIViewController {
         getReviews()
     }
     
+    /*
+        Get Reviews from ViewModel and Network Manager
+    */
+    
     private func getReviews() {
+        showLoadingView()
         coffeeShopViewModel.getCoffeeShopReviews { [weak self] (result) in
+            /*
+             Upading UI on Main thread after response is fetched
+             */
             DispatchQueue.main.async {
+                self?.hideLoadingView()
                 self?.reviewsTableView.reloadData()
             }
         }
     }
     
+    /*
+     Using Automatic Dimension for auto resizing of cells based on content
+     */
     private func setUpTableView() {
         reviewsTableView.dataSource = self
         reviewsTableView.delegate = self
