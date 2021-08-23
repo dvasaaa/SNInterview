@@ -20,6 +20,8 @@
 		9BA0B7FD26D37046004937CF /* SNConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA0B7FC26D37046004937CF /* SNConstants.swift */; };
 		9BA0B80826D37251004937CF /* CoffeeShopItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BA0B80626D37251004937CF /* CoffeeShopItemCell.xib */; };
 		9BA0B80926D37251004937CF /* CoffeeShopItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA0B80726D37251004937CF /* CoffeeShopItemCell.swift */; };
+		9BA0B81226D3752D004937CF /* CoffeeShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA0B80F26D3752D004937CF /* CoffeeShopViewModel.swift */; };
+		9BA0B81326D3752D004937CF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA0B81126D3752D004937CF /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		9BA0B7FC26D37046004937CF /* SNConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNConstants.swift; sourceTree = "<group>"; };
 		9BA0B80626D37251004937CF /* CoffeeShopItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoffeeShopItemCell.xib; sourceTree = "<group>"; };
 		9BA0B80726D37251004937CF /* CoffeeShopItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeShopItemCell.swift; sourceTree = "<group>"; };
+		9BA0B80F26D3752D004937CF /* CoffeeShopViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeShopViewModel.swift; sourceTree = "<group>"; };
+		9BA0B81126D3752D004937CF /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 		576E9C67234E7B9900199B25 /* SNInterview */ = {
 			isa = PBXGroup;
 			children = (
+				9BA0B81026D3752D004937CF /* Service */,
+				9BA0B80E26D3752D004937CF /* ViewModels */,
 				9BA0B7EB26D35E30004937CF /* CustomViews */,
 				9BA0B7EA26D35DD9004937CF /* Helpers */,
 				9BA0B7E826D35DC9004937CF /* Resources */,
@@ -173,6 +179,22 @@
 				9BA0B80626D37251004937CF /* CoffeeShopItemCell.xib */,
 			);
 			path = CoffeeShopItemCell;
+			sourceTree = "<group>";
+		};
+		9BA0B80E26D3752D004937CF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9BA0B80F26D3752D004937CF /* CoffeeShopViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9BA0B81026D3752D004937CF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				9BA0B81126D3752D004937CF /* NetworkManager.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,8 +302,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BA0B7FD26D37046004937CF /* SNConstants.swift in Sources */,
+				9BA0B81226D3752D004937CF /* CoffeeShopViewModel.swift in Sources */,
 				576E9C8F234EF35F00199B25 /* Extensions.swift in Sources */,
 				576E9C6B234E7B9900199B25 /* ViewController.swift in Sources */,
+				9BA0B81326D3752D004937CF /* NetworkManager.swift in Sources */,
 				9BA0B80926D37251004937CF /* CoffeeShopItemCell.swift in Sources */,
 				576E9C69234E7B9900199B25 /* AppDelegate.swift in Sources */,
 				576E9C8D234EF29E00199B25 /* CoffeeShopItemView.swift in Sources */,

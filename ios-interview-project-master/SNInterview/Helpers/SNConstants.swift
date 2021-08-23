@@ -11,8 +11,12 @@ import Foundation
 public enum SNConstants {
     enum Strings {
         static let rating = "Rating: "
+        static let json = "json"
+        static let coffeeShops = "CoffeeShops"
+        static let url = "https://jsonplaceholder.typicode.com/users"
     }
     enum ErrorStrings {
         static let viewNotExist = "View doesn't exist"
+        static let decodeJsonError = "Error decoding json"
     }
 }
