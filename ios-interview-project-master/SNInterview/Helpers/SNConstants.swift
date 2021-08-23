@@ -13,7 +13,7 @@ public enum SNConstants {
         static let rating = "Rating: "
         static let json = "json"
         static let coffeeShops = "CoffeeShops"
-        static let url = "https://jsonplaceholder.typcode.com/users"
+        static let url = "https://jsonplaceholder.typicode.com/users"
         static let errorTitle = "Error"
         static let errorMsg = "Error retrieving Reviews"
         static let ok = "OK"
